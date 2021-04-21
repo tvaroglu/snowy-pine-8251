@@ -62,7 +62,8 @@ User Story 1, Flights Index Page
 As a visitor
 When I visit the flights index page
 I see a list of all flight numbers
-And under each flight number I see the names of all that flights passengers
+And next to each flight number I see the name of the Airline of that flight
+And under each flight number I see the names of all that flight's passengers
 ```
 
 ```
