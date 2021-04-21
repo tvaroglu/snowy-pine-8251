@@ -60,7 +60,7 @@ Some of the initial migrations and model set up has been done for you.
 User Story 1, Flights Index Page
 
 As a visitor
-When I visit the flights index page ('/flights')
+When I visit the flights index page
 I see a list of all flight numbers
 And under each flight number I see the names of all that flights passengers
 ```
