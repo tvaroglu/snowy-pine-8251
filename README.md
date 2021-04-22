@@ -47,7 +47,7 @@ Field Trip is an app that tracks Airlines, Flights, and Passengers.
 
 * Airlines have a name
   * Ex: name: “Frontier”
-* Flights have a number, date, time, departure city, and arrival city
+* Flights have a number, date, departure city, and arrival city
  	* Ex: number: “1727”, date: “08/03/20”, departure_city: “Denver”, arrival_city: “Reno” -- for this app, it does not matter how you format the flight’s date
 * Passengers have a name and age
   * Ex: name: “Joe”, age: 7
