@@ -6,7 +6,7 @@ RSpec.describe Airline, type: :model do
   end
 
   describe 'methods' do
-    it 'can a distinct list of adult passengers booked on all flights' do
+    it 'can return a distinct list of adult passengers booked on all flights' do
       airline = Airline.create!(name: 'Southwest')
       flight_1 = airline.flights.create!(
         number: 'SWA123',
