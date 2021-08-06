@@ -1,6 +1,11 @@
 <h4><em>All Passengers Currently Booked:</em></h4>
   <% flight.passengers.each do |passenger|  %>
-    <div id="passengers-<%= "#{flight.id}_#{passenger.id}" %>">
-      <p><%= passenger.name %></p>
+    <div id="passenger-<%= passenger.id %>">
+      <div style="float:left; padding-right:10px;">
+        <p><%= passenger.name %></p>
+      </div>
+      <br>
+      <%= button_to "Remove #{passenger.name}", "/bookings/destroy" , method: :delete, params: { flight_id: flight.id, passenger_id: passenger.id } %>
+      <br>
     </div>
   <% end %>

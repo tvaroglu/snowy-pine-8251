@@ -45,10 +45,10 @@ RSpec.describe 'flights index' do
       expect(page).to have_content("#{@flight_1.airline_name}: #{@flight_1.number}")
       expect(page).to have_content("All Passengers Currently Booked:")
     end
-    within "#passengers-#{@flight_1.id}_#{@passenger_1.id}" do
+    within "#passenger-#{@passenger_1.id}" do
       expect(page).to have_content(@passenger_1.name)
     end
-    within "#passengers-#{@flight_1.id}_#{@passenger_2.id}" do
+    within "#passenger-#{@passenger_2.id}" do
       expect(page).to have_content(@passenger_2.name)
     end
 
@@ -56,16 +56,39 @@ RSpec.describe 'flights index' do
       expect(page).to have_content("#{@flight_2.airline_name}: #{@flight_2.number}")
       expect(page).to have_content("All Passengers Currently Booked:")
     end
-    within "#passengers-#{@flight_2.id}_#{@passenger_3.id}" do
+    within "#passenger-#{@passenger_3.id}" do
       expect(page).to have_content(@passenger_3.name)
     end
-    within "#passengers-#{@flight_2.id}_#{@passenger_4.id}" do
+    within "#passenger-#{@passenger_4.id}" do
       expect(page).to have_content(@passenger_4.name)
     end
 
     within "#flight-#{@flight_3.id}" do
       expect(page).to have_content("No Passengers Currently Booked")
     end
+  end
+
+  # User Story 2, Remove a Passenger from a Flight
+    # As a visitor
+    # When I visit the flights index page
+    # Next to each passengers name
+    # I see a link or button to remove that passenger from that flight
+    # When I click on that link/button
+    # I'm returned to the flights index page
+    # And I no longer see that passenger listed under that flight
+    # (Note: you should not destroy the passenger record entirely)
+  it 'displays a button to remove a passenger from a flight' do
+    visit flights_path
+    delete_button = "Remove #{@passenger_1.name}"
+
+    within "#passenger-#{@passenger_1.id}" do
+      expect(page).to have_button(delete_button)
+      click_on delete_button
+    end
+
+    visit flights_path
+    expect(page).to_not have_content(@passenger_1.name)
+    expect(Passenger.find(@passenger_1.id)).to eq(@passenger_1)
   end
 
 end
