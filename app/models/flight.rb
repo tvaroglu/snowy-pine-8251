@@ -8,4 +8,8 @@ class Flight < ApplicationRecord
     airline.name
   end
 
+  def has_passengers?
+    passengers.count > 0
+  end
+
 end

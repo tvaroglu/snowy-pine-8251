@@ -1,0 +1,6 @@
+<h4><em>All Passengers Currently Booked:</em></h4>
+  <% flight.passengers.each do |passenger|  %>
+    <div id="passengers-<%= "#{flight.id}_#{passenger.id}" %>">
+      <p><%= passenger.name %></p>
+    </div>
+  <% end %>

@@ -1,0 +1,13 @@
+<h1>All Flights</h1>
+<br>
+<% @flights.each do |flight| %>
+  <div id="flight-<%= flight.id %>">
+    <h3><%= "#{flight.airline_name}: #{flight.number}" %></h3>
+    <% if flight.has_passengers? %>
+      <%= render partial: 'passengers', locals: { flight: flight} %>
+    <% else %>
+      <h4><em>No Passengers Currently Booked</em></h4>
+    <% end %>
+  <br>
+  </div>
+<% end %>
