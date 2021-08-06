@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
-  def create
-  end
+  # def create
+  # end
 
   def destroy
     booking = Booking.find_by(flight_id: params[:flight_id])

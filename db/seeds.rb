@@ -40,7 +40,7 @@ flight_4 = airline_2.flights.create!(
 # Passengers
 passenger_1 = Passenger.create!(name: 'Connor', age: 7)
 passenger_2 = Passenger.create!(name: 'Brian', age: 12)
-passenger_3 = Passenger.create!(name: 'Sally', age: 5)
+passenger_3 = Passenger.create!(name: 'Sally', age: 64)
 passenger_4 = Passenger.create!(name: 'Joe', age: 43)
 passenger_5 = Passenger.create!(name: 'Gus', age: 18)
 passenger_6 = Passenger.create!(name: 'Mark', age: 72)
@@ -48,5 +48,6 @@ passenger_6 = Passenger.create!(name: 'Mark', age: 72)
 # Bookings
 flight_1.passengers << passenger_1
 flight_1.passengers << passenger_2
+flight_1.passengers << passenger_4
 flight_2.passengers << passenger_3
 flight_2.passengers << passenger_4
